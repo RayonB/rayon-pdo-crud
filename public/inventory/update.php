@@ -78,6 +78,8 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
             $param_product_details = $product_details;
             $param_product_retail_price = $product_retail_price;
             $param_product_id = $product_id;
+            $param_product_date_added = $product_date_added;
+            $param_product_updated_date = $product_updated_added;
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
