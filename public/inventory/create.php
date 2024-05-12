@@ -36,25 +36,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $product_retail_price = $input_product_retail_price;
     }
     
-     // Validate product date
-     $input_product_date_added = trim($_POST["product_date_added"]);
-     if(empty($input_product_date_added)){
-         $product_date_added_err = "Please enter the date added.";     
-     } elseif(!ctype_digit($input_product_date_added)){
-         $product_date_added_err = "Please enter a positive integer value.";
-     } else{
-         $product_date_added = $input_product_date_added;
-     }
+    // Validate product date
+    $input_product_date_added = trim($_POST["product_date_added"]);
+    if(empty($input_product_date_added)){
+        $product_date_added_err = "Please enter the date added.";     
+    } elseif(!strtotime($input_product_date_added)){
+        $product_date_added_err = "Please enter a valid date.";
+    } else{
+        $product_date_added = date('Y-m-d', strtotime($input_product_date_added));
+    }
 
-     // Validate product updated
-     $input_product_updated_date = trim($_POST["product_updated_date"]);
-     if(empty($input_product_updated_date)){
-         $product_updated_added_err = "Please enter the updated date.";     
-     } elseif(!ctype_digit($input_product_updated_date)){
-         $product_updated_date_err = "Please enter a positive integer value.";
-     } else{
-         $product_updated_date = $input_product_updated_date;
-     }
+    // Validate product updated
+    $input_product_updated_date = trim($_POST["product_updated_date"]);
+    if(empty($input_product_updated_date)){
+        $product_updated_date_err = "Please enter the updated date.";     
+    } elseif(!strtotime($input_product_updated_date)){
+        $product_updated_date_err = "Please enter a valid date.";
+    } else{
+        $product_updated_date = date('Y-m-d', strtotime($input_product_updated_date));
+    }
 
     // Check input errors before inserting in database
     if(empty($product_name_err) && empty($product_details_err) && empty($product_retail_price_err) && empty($product_date_added_err) && empty($product_updated_date_err)){
@@ -67,18 +67,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->bindParam(":product_name", $param_product_name);
             $stmt->bindParam(":product_details", $param_product_details);
             $stmt->bindParam(":product_retail_price", $param_product_retail_price);
-            $stmt->bindParam(":product_id", $param_product_id);
             $stmt->bindParam(":product_date_added", $param_product_date_added);
             $stmt->bindParam(":product_updated_date", $param_product_updated_date);
-        
             
-           // Set parameters
-           $param_product_name = $product_name;
-           $param_product_details = $product_details;
-           $param_product_retail_price = $product_retail_price;
-           $param_product_id = $product_id;
-           $param_product_date_added = $product_date_added;
-           $param_product_updated_date = $product_updated_added;
+            // Set parameters
+            $param_product_name = $product_name;
+            $param_product_details = $product_details;
+            $param_product_retail_price = $product_retail_price;
+            $param_product_date_added = $product_date_added;
+            $param_product_updated_date = $product_updated_date;
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -118,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-5">Create Record</h2>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Please fill this form and submit to add product record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
                             <label>Product Name</label>
@@ -145,6 +142,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input type="text" name="product_updated_date" class="form-control <?php echo (!empty($product_updated_date_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $product_updated_date; ?>">
                             <span class="invalid-feedback"><?php echo $product_updated_date_err;?></span>
                         </div>
+
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="../user/dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>

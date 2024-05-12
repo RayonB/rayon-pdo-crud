@@ -24,7 +24,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     // Validate product details
     $input_product_details = trim($_POST["product_details"]);
     if(empty($input_product_details)){
-        $aproduct_details_err = "Please enter product details.";     
+        $product_details_err = "Please enter product details.";     
     } else{
         $product_details = $input_product_details;
     }
@@ -43,20 +43,20 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
      $input_product_date_added = trim($_POST["product_date_added"]);
      if(empty($input_product_date_added)){
          $product_date_added_err = "Please enter the date added.";     
-     } elseif(!ctype_digit($input_product_date_added)){
-         $product_date_added_err = "Please enter a positive integer value.";
+     } elseif(!strtotime($input_product_date_added)){
+         $product_date_added_err = "Please enter a valid date.";
      } else{
-         $product_date_added = $input_product_date_added;
+         $product_date_added = date('Y-m-d', strtotime($input_product_date_added));
      }
 
      // Validate product updated date
      $input_product_updated_date = trim($_POST["product_updated_date"]);
      if(empty($input_product_updated_date)){
-         $product_updated_added_err = "Please enter the updated date.";     
-     } elseif(!ctype_digit($input_product_updated_date)){
-         $product_updated_date_err = "Please enter a positive integer value.";
+         $product_updated_date_err = "Please enter the updated date.";     
+     } elseif(!strtotime($input_product_updated_date)){
+         $product_updated_date_err = "Please enter a valid date.";
      } else{
-         $product_updated_date = $input_product_updated_date;
+         $product_updated_date = date('Y-m-d', strtotime($input_product_updated_date));
      }
     
     // Check input errors before inserting in database
@@ -79,7 +79,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
             $param_product_retail_price = $product_retail_price;
             $param_product_id = $product_id;
             $param_product_date_added = $product_date_added;
-            $param_product_updated_date = $product_updated_added;
+            $param_product_updated_date = $product_updated_date;
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
