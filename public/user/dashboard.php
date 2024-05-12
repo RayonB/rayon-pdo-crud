@@ -35,12 +35,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             width: 1000px; /* Increased width */
             margin: 0 auto;
             background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 5px;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
         h1 {
-            color: white ;
+            font: 50px sans-serif;
+            color: purple ;
+            height: 10vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 5px; /* Adjust to center content */
         }
         table tr td:last-child{
             width: 120px;

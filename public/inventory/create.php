@@ -109,15 +109,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             background-position: center;
             height: 100vh; /* Adjust to full viewport height */
             margin: 0;
-            padding-top: 40px; /* Adjust to center content */
+            padding-top: 5px; /* Adjust to center content */
             color: #fff; /* Text color */
         }
         .wrapper{
             width: 600px;
             margin: 0 auto;
             background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 5px;
+            padding: 5px;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
         .form-group label {

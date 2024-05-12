@@ -46,9 +46,39 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     <title>Delete Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 40px; /* Adjust to center content */
+            color: #fff; /* Text color */
+        }
         .wrapper{
             width: 600px;
             margin: 0 auto;
+        }
+        .alert {
+            background-color: rgba(255, 255, 255, 0.2); /* Alert background color with opacity */
+            color: #fff; /* Text color */
+            border-color: #dc3545; /* Alert border color */
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Danger button background color */
+            border-color: #dc3545; /* Danger button border color */
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Danger button background color on hover */
+            border-color: #bd2130; /* Danger button border color on hover */
+        }
+        .btn-secondary {
+            background-color: #6c757d; /* Secondary button background color */
+            border-color: #6c757d; /* Secondary button border color */
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Secondary button background color on hover */
+            border-color: #545b62; /* Secondary button border color on hover */
         }
     </style>
 </head>
