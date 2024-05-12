@@ -3,8 +3,8 @@
 require_once "../../db/config.php";
  
 // Define variables and initialize with empty values
-$product_name = $product_details = $product_retail_price = "";
-$product_name_err = $product_details_err = $product_retail_price_err = "";
+$product_name = $product_details = $product_retail_price = $product_date_added = $product_updated_date = "";
+$product_name_err = $product_details_err = $product_retail_price_err = $product_date_added_err = $product_updated_date_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
@@ -38,11 +38,31 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     } else{
         $product_retail_price = $input_product_retail_price;
     }
+
+     // Validate product date added
+     $input_product_date_added = trim($_POST["product_date_added"]);
+     if(empty($input_product_date_added)){
+         $product_date_added_err = "Please enter the date added.";     
+     } elseif(!ctype_digit($input_product_date_added)){
+         $product_date_added_err = "Please enter a positive integer value.";
+     } else{
+         $product_date_added = $input_product_date_added;
+     }
+
+     // Validate product updated date
+     $input_product_updated_date = trim($_POST["product_updated_date"]);
+     if(empty($input_product_updated_date)){
+         $product_updated_added_err = "Please enter the updated date.";     
+     } elseif(!ctype_digit($input_product_updated_date)){
+         $product_updated_date_err = "Please enter a positive integer value.";
+     } else{
+         $product_updated_date = $input_product_updated_date;
+     }
     
     // Check input errors before inserting in database
-    if(empty($product_name_err) && empty($product_details_err) && empty($product_retail_price_err)){
+    if(empty($product_name_err) && empty($product_details_err) && empty($product_retail_price_err) && empty($product_date_added_err) && empty($product_updated_date_err)){
         // Prepare an update statement
-        $sql = "UPDATE products SET product_name=:product_name, product_details=:product_details, product_retail_price=:product_retail_price WHERE product_id=:product_id";
+        $sql = "UPDATE products SET product_name=:product_name, product_details=:product_details, product_retail_price=:product_retail_price, product_date_added=:product_date_added, product_updated_date=:product_updated_date WHERE product_id=:product_id";
  
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -50,6 +70,8 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
             $stmt->bindParam(":product_details", $param_product_details);
             $stmt->bindParam(":product_retail_price", $param_product_retail_price);
             $stmt->bindParam(":product_id", $param_product_id);
+            $stmt->bindParam(":product_date_added", $param_product_date_added);
+            $stmt->bindParam(":product_updated_date", $param_product_updated_date);
             
             // Set parameters
             $param_product_name = $product_name;
@@ -99,6 +121,8 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                     $product_name = $row["product_name"];
                     $product_details = $row["product_details"];
                     $product_retail_price = $row["product_retail_price"];
+                    $product_date_added = $row["product_date_added"];
+                    $product_updated_date = $row["product_updated_date"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: ../user/error.php");
@@ -158,6 +182,16 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                             <label>Product Retail Price</label>
                             <input type="text" name="product_retail_price" class="form-control <?php echo (!empty($product_retail_price_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $product_retail_price; ?>">
                             <span class="invalid-feedback"><?php echo $product_retail_price_err;?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Date Added</label>
+                            <input type="text" name="product_date_added" class="form-control <?php echo (!empty($product_date_added_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $product_date_added; ?>">
+                            <span class="invalid-feedback"><?php echo $product_date_added_err;?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Updated Date</label>
+                            <input type="text" name="product_updated_date" class="form-control <?php echo (!empty($product_updated_date_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $product_updated_date; ?>">
+                            <span class="invalid-feedback"><?php echo $product_updated_date_err;?></span>
                         </div>
                         
                         <!--Initialize product id-->
