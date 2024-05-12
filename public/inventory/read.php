@@ -25,6 +25,8 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                 $product_name = $row["product_name"];
                 $product_details = $row["product_details"];
                 $product_retail_price = $row["product_retail_price"];
+                $product_date_added = $row["product_date_added"];
+                $product_updated_date = $row["product_updated_date"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: ../public/error.php");
@@ -76,8 +78,16 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                         <p><b><?php echo $row["product_details"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Retail Price</label>
+                        <label>Product Retail Price</label>
                         <p><b><?php echo $row["product_retail_price"]; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Date Added</label>
+                        <p><b><?php echo $row["product_date_added"]; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Updated Date</label>
+                        <p><b><?php echo $row["product_updated_date"]; ?></b></p>
                     </div>
                     <p><a href="../user/dashboard.php" class="btn btn-primary">Back</a></p>
 
