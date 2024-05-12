@@ -5,6 +5,14 @@
     <title>Error</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 40px; /* Adjust to center content */
+        }
         .wrapper{
             width: 600px;
             margin: 0 auto;

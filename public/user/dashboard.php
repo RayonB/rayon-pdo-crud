@@ -9,21 +9,38 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 ?>
  
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rayonskie</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        body{ font: 14px sans-serif; text-align: center; }
+        body {
+            font: 14px sans-serif;
+            text-align: center;
+            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 40px; /* Adjust to center content */
+        }
         .wrapper{
-            width: 600px;
+            width: 1000px; /* Increased width */
             margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: white ;
         }
         table tr td:last-child{
             width: 120px;
@@ -81,7 +98,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     <td>{{product_retail_price}}</td>
                                     <td>{{product_date_added}}</td>
                                     <td>{{product_updated_date}}</td>
-                                <td>
+                                    <td>
                                         <a href="../inventory/read.php?product_id={{product_id}}" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>
                                         <a href="../inventory/update.php?product_id={{product_id}}" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>
                                         <a href="../inventory/delete.php?product_id={{product_id}}" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>

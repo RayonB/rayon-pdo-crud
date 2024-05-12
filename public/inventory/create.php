@@ -96,16 +96,52 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Create Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 40px; /* Adjust to center content */
+            color: #fff; /* Text color */
+        }
         .wrapper{
             width: 600px;
             margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .form-group label {
+            color: #fff; /* Label text color */
+        }
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.2); /* Input background color with opacity */
+            color: #fff; /* Input text color */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Primary button background color */
+            border-color: #007bff; /* Primary button border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Primary button background color on hover */
+            border-color: #0056b3; /* Primary button border color on hover */
+        }
+        .btn-secondary {
+            background-color: #6c757d; /* Secondary button background color */
+            border-color: #6c757d; /* Secondary button border color */
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Secondary button background color on hover */
+            border-color: #5a6268; /* Secondary button border color on hover */
         }
     </style>
 </head>
