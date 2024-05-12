@@ -12,10 +12,19 @@
             height: 100vh; /* Adjust to full viewport height */
             margin: 0;
             padding-top: 40px; /* Adjust to center content */
+            color: #fff; /* Text color */
         }
         .wrapper{
             width: 600px;
             margin: 0 auto;
+        }
+        .alert {
+            background-color: rgba(255, 255, 255, 0.2); /* Alert background color with opacity */
+            color: #fff; /* Text color */
+            border-color: #dc3545; /* Alert border color */
+        }
+        .alert a {
+            color: #fff; /* Link color */
         }
     </style>
 </head>

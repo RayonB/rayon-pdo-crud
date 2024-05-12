@@ -149,16 +149,48 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
 }
 ?>
  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Update Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 0px; /* Adjust to center content */
+        }
         .wrapper{
-            width: 600px;
+            width: 700px;
             margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .modal-footer .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .modal-footer .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
         }
     </style>
 </head>
@@ -167,7 +199,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="mt-5">Update Record</h2>
+                    <h2>Update Record</h2>
                     <p>Please edit the input values and submit to update the product record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
@@ -196,32 +228,30 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                             <span class="invalid-feedback"><?php echo $product_updated_date_err;?></span>
                         </div>
                         
-                        <!--Initialize product id-->
+                        <!-- Initialize product id -->
                         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
                         
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveUpdateChangesModal">
-                            Save Changes
-                        </button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveUpdateChangesModal">Save Changes</button>
                         
                         <!-- Modal -->
                         <div class="modal fade" id="saveUpdateChangesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Save changes?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <input type="submit" class="btn btn-primary" value="Submit">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                Save changes?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <input type="submit" class="btn btn-primary" value="Submit">
-                            </div>
-                            </div>
-                        </div>
                         </div>
 
                         <a href="../user/dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
@@ -231,8 +261,8 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
         </div>
     </div>
 
-<!--Additional Bootstrap Dependancies-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Additional Bootstrap Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

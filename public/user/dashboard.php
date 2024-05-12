@@ -10,6 +10,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
  
 
+
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,27 +28,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Adjust to full viewport height */
+            height: 120vh; /* Adjust to full viewport height */
             margin: 0;
-            padding-top: 40px; /* Adjust to center content */
+            padding-top: 0px; /* Adjust to center content */
         }
         .wrapper{
-            width: 1000px; /* Increased width */
+            width: 1300px; /* Increased width */
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
+            background-color: rgba(255, 255, 255, 0.6); /* Background color with opacity */
             border-radius: 10px;
-            padding: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9);
         }
         h1 {
             font: 50px sans-serif;
-            color: purple ;
-            height: 10vh; /* Adjust to full viewport height */
-            margin: 0;
-            padding-top: 5px; /* Adjust to center content */
+            color: #16016b ;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding-top: 0px;
+            padding: 5px;
+            border-radius: 10px;
         }
         table tr td:last-child{
-            width: 120px;
+            width: 150px;
         }
     </style>
 </head>

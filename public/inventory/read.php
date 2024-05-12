@@ -54,9 +54,33 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
     <title>View Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 80vh; /* Adjust to full viewport height */
+            margin: 0;
+            padding-top: 50px; /* Adjust to center content */
+        }
         .wrapper{
             width: 600px;
             margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -86,8 +110,9 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                         <label>Product Updated Date</label>
                         <p><b><?php echo $product_updated_date; ?></b></p>
                     </div>
-                    <p><a href="../user/dashboard.php" class="btn btn-primary">Back</a></p>
 
+                    <p><a href="../user/dashboard.php" class="btn btn-primary">Back</a></p>
+                
                 </div>
             </div>        
         </div>

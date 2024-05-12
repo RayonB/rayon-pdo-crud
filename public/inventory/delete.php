@@ -31,7 +31,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     unset($pdo);
 } else{
     // Check existence of id parameter
-    if(empty(trim($_POST["product_id"]))){
+    if(empty(trim($_GET["product_id"]))){
         // URL doesn't contain id parameter. Redirect to error page
         header("location: ../user/error.php");
         exit();
@@ -45,6 +45,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     <meta charset="UTF-8">
     <title>Delete Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <style>
         body {
             background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
@@ -90,7 +91,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                     <h2 class="mt-5 mb-3">Delete Record</h2>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger">
-                            <input type="hidden" name="product_id" value="<?php echo trim($_POST["product_id"]); ?>"/>
+                            <input type="hidden" name="product_id" value="<?php echo trim($_GET["product_id"]); ?>"/>
                             <p>Are you sure you want to delete this record?</p>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">

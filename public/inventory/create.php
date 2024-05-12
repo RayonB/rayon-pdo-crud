@@ -107,18 +107,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Adjust to full viewport height */
+            height: 115vh; /* Adjust to full viewport height */
             margin: 0;
-            padding-top: 5px; /* Adjust to center content */
+            padding-top: 0px; /* Adjust to center content */
             color: #fff; /* Text color */
         }
         .wrapper{
-            width: 600px;
+            width: 850px;
             margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+            background-color: rgba(0, 0, 0, 0.8); /* Background color with opacity */
             border-radius: 5px;
-            padding: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 1px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
         }
         .form-group label {
             color: #fff; /* Label text color */
