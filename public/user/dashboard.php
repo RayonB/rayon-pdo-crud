@@ -94,7 +94,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             while ($row = $result->fetch()) {
                                 $rowHtml = str_replace(
                                     array('{{product_id}}', '{{product_name}}', '{{product_details}}', '{{product_retail_price}}', '{{product_date_added}}', '{{product_updated_date}}'),
-                                    array($row['product_id'], $row['product_name'], $row['product_details'], $row['product_retail_price'], ),
+                                    array($row['product_id'], $row['product_name'], $row['product_details'], $row['product_retail_price'], $row['product_date_added'], $row['product_updated_date']),
                                     $rowTemplate
                                 );
                                 $rows .= $rowHtml;
