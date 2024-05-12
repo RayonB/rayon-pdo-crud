@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "../db/config.php";
+require_once "../../db/config.php";
  
 // Define variables and initialize with empty values
 $product_name = $product_details = $product_retail_price = "";
@@ -60,7 +60,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Records updated successfully. Redirect to landing page
-                header("location: ../index.php");
+                header("location: ../user/dashboard.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -101,7 +101,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                     $product_retail_price = $row["product_retail_price"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
-                    header("location: ../public/error.php");
+                    header("location: ../user/error.php");
                     exit();
                 }
                 
@@ -117,7 +117,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
         unset($pdo);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: ../public/error.php");
+        header("location: ../user/error.php");
         exit();
     }
 }
@@ -188,7 +188,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                         </div>
                         </div>
 
-                        <a href="../index.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="../user/dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>        
