@@ -29,17 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
-  `product_name` varchar(100) NOT NULL,
-  `product_details` varchar(255) NOT NULL,
-  `product_retail_price` int(10) NOT NULL
+  `product_name` varchar(255) NOT NULL,
+  `product_details` varchar(100) NOT NULL,
+  `product_retail_price` varchar(255) NOT NULL,
+  `product_date_added` date NOT NULL,
+  `product_updated_date` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_details`, `product_retail_price`) VALUES
-(1, 'Proben', 'Fried chicken proventriculus', 5);
+INSERT INTO `products` (`product_id`, `product_name`, `product_details`, `product_retail_price`, `product_date_added`, `product_updated_date`) VALUES
+(1, 'Nescafe (25%)', 'Beverage brewed from roasted coffee beans', 30, 2024-05-12, 2026-10-05);
 
 -- --------------------------------------------------------
 
@@ -59,8 +61,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'oppo', '$2y$10$9YQzk2bAlzmBb9T67sJCTuRYxbs6VT6CVqn5qdDe/CVfg/CjME5Z6', '2024-05-11 00:03:30'),
-(2, 'opopako', '$2y$10$ETd6tCwO2cfdTEQM/ygX5u3A9HllGzpsBZegC22qhk8hP3h6xfCsS', '2024-05-11 00:04:11');
+(1, 'Rayon', 'qedsafeqehduasyfdiafhdjssbfkdjgfruehcfjnsahsdkasjd', '2024-05-12 04:20:46');
 
 --
 -- Indexes for dumped tables
