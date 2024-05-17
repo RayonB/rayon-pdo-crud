@@ -79,8 +79,57 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Reset Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+         body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://source.unsplash.com/1600x900/?nature');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrapper {
+            width: 360px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .wrapper h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border-radius: 4px;
+        }
+        .btn-primary, .btn-secondary {
+            width: 100%;
+            border-radius: 4px;
+        }
+        .btn-secondary {
+            margin-top: 10px;
+        }
+        .invalid-feedback {
+            color: #dc3545;
+        }
+        p {
+            text-align: center;
+            color: #333;
+        }
+        p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }       
     </style>
 </head>
 <body>
