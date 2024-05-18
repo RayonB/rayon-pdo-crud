@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
   CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `title` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `description` varchar(200) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `rrp` decimal(10,0) NOT NULL DEFAULT 0,
@@ -44,7 +44,7 @@ SET time_zone = "+00:00";
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `description`, `price`, `rrp`, `quantity`, `img`, `date_added`,  `updated_date`) VALUES
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `rrp`, `quantity`, `img`, `date_added`,  `updated_date`) VALUES
 (1, 'Nescafe (300g)', 'Beverage brewed from roasted coffee beans.', 250, 280, 30, 'https://e7.pngegg.com/pngimages/648/793/png-clipart-instant-coffee-tea-espresso-latte-coffee-nescafe-jar-food-coffee-tumbnail.png', '2024-05-18 00:00:00', '2025-08-25 00:00:00'),
 (2, 'Gardenia Bread', 'Sliced breads are also flavored.', 90, 120, 30, 'https://e7.pngegg.com/pngimages/957/212/png-clipart-white-bread-sliced-bread-gardenia-loaf-bread-cooking-bread.png', '2024-05-18 00:00:00', '2026-02-01 00:00:00'),
 (3, 'Birch Tree (33g)', '100% pure cows milk with no added sugar.', 10, 15, 30, 'https://filebroker-cdn.lazada.com.ph/kf/S90ad38324327484890464b56752c1e355.jpg', '2024-05-18 00:00:00', '2027-05-28 00:00:00'),
