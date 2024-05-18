@@ -97,12 +97,12 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 <div class="col-md-12">
                     <h1 class="mt-5 mb-3">View Product Record</h1>
                     <div class="form-group">
-                        <label>Product Name</label>
-                        <p><b><?php echo htmlspecialchars($product_name); ?></b></p>
+                        <label>Name</label>
+                        <p><b><?php echo htmlspecialchars($name); ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Product Details</label>
-                        <p><b><?php echo htmlspecialchars($product_details); ?></b></p>
+                        <label>Description</label>
+                        <p><b><?php echo htmlspecialchars($description); ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Price</label>

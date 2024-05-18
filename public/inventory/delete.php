@@ -45,33 +45,38 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <meta charset="UTF-8">
     <title>Delete Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
     <style>
         body {
             background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Adjust to full viewport height */
+            height: 115vh; /* Adjust to full viewport height */
             margin: 0;
-            padding-top: 40px; /* Adjust to center content */
+            padding-top: 0px; /* Adjust to center content */
             color: #fff; /* Text color */
         }
         .wrapper{
-            width: 600px;
+            width: 850px;
             margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Background color with opacity */
+            border-radius: 5px;
+            padding: 1px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
         }
-        .alert {
-            background-color: rgba(255, 255, 255, 0.2); /* Alert background color with opacity */
-            color: #fff; /* Text color */
-            border-color: #dc3545; /* Alert border color */
+        .form-group label {
+            color: #fff; /* Label text color */
         }
-        .btn-danger {
-            background-color: #dc3545; /* Danger button background color */
-            border-color: #dc3545; /* Danger button border color */
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.2); /* Input background color with opacity */
+            color: #fff; /* Input text color */
         }
-        .btn-danger:hover {
-            background-color: #c82333; /* Danger button background color on hover */
-            border-color: #bd2130; /* Danger button border color on hover */
+        .btn-primary {
+            background-color: #007bff; /* Primary button background color */
+            border-color: #007bff; /* Primary button border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Primary button background color on hover */
+            border-color: #0056b3; /* Primary button border color on hover */
         }
         .btn-secondary {
             background-color: #6c757d; /* Secondary button background color */
@@ -79,7 +84,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
         .btn-secondary:hover {
             background-color: #5a6268; /* Secondary button background color on hover */
-            border-color: #545b62; /* Secondary button border color on hover */
+            border-color: #5a6268; /* Secondary button border color on hover */
         }
     </style>
 </head>
