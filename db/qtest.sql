@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2024 at 07:29 PM
+-- Generation Time: May 18, 2024 at 07:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -27,23 +27,31 @@ SET time_zone = "+00:00";
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
-  `product_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `product_details` varchar(100) NOT NULL,
-  `product_retail_price` varchar(255) NOT NULL,
-  `product_date_added` date NOT NULL,
-  `product_updated_date` date
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `price` decimal(10,0) NOT NULL,
+  `rrp` decimal(10,0) NOT NULL DEFAULT 0,
+  `quantity` int(20) NOT NULL,
+  `img` text NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utfA8 COLLATE=utf8_general_ci;
+
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_details`, `product_retail_price`, `product_date_added`, `product_updated_date`) VALUES
-(1, 'Nescafe (25%)', 'Beverage brewed from roasted coffee beans', 30, 2024-05-12, 2026-10-05);
+INSERT INTO `products` (`id`, `title`, `description`, `price`, `rrp`, `quantity`, `img`, `date_added`,  `updated_date`) VALUES
+(1, 'Nescafe (300g)', 'Beverage brewed from roasted coffee beans.', 250, 280, 30, 'https://e7.pngegg.com/pngimages/648/793/png-clipart-instant-coffee-tea-espresso-latte-coffee-nescafe-jar-food-coffee-tumbnail.png', '2024-05-18 00:00:00', '2025-08-25 00:00:00'),
+(2, 'Gardenia Bread', 'Sliced breads are also flavored.', 90, 120, 30, 'https://e7.pngegg.com/pngimages/957/212/png-clipart-white-bread-sliced-bread-gardenia-loaf-bread-cooking-bread.png', '2024-05-18 00:00:00', '2026-02-01 00:00:00'),
+(3, 'Birch Tree (33g)', '100% pure cows milk with no added sugar.', 10, 15, 30, 'https://filebroker-cdn.lazada.com.ph/kf/S90ad38324327484890464b56752c1e355.jpg', '2024-05-18 00:00:00', '2027-05-28 00:00:00'),
+(4, 'Brown Sugar (1kl)', 'All sweet carbohydrates.', 80, 100, 40, 'https://mygroceryph.com/pub/media/catalog/product/cache/942fb7ebd8f124d7d8ad39312cbc983a/h/e/hermano_brown_sugar_1kg.png', '2024-05-18 00:00:00', '2030-10-05 00:00:00');
 
 -- --------------------------------------------------------
+
 
 --
 -- Table structure for table `users`
@@ -61,8 +69,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'Rayon', 'qedsafeqehduasyfdiafhdjssbfkdjgfruehcfjnsahsdkasjd', '2024-05-12 04:20:46');
+(1, 'rayon', 'q1w2e3r4t5y6u7i8o9', '2024-04-29 16:39:58');
 
+--
 --
 -- Indexes for dumped tables
 --
@@ -71,14 +80,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -88,13 +90,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

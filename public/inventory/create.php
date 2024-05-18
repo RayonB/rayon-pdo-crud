@@ -1,11 +1,12 @@
 <?php
 // Include config file
-require_once "../../db/config.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
+
  
 // Define variables and initialize with empty values
-$product_name = $product_details = $product_retail_price = $product_date_added = $product_updated_date = "";
-$product_name_err = $product_details_err = $product_retail_price_err = $product_date_added_err = $product_updated_date_err = "";
- 
+$title = $description = $price = $rrp = $quantity = $img =  $date_added = $updated_date ="";
+$title_err = $description_err = $price_err = $rrp_err = $quantity_err = $img_err = $date_added_err = $updated_date_err ="";
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate name
