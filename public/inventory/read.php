@@ -1,29 +1,35 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
-    require_once "../../db/config.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
+
     
-    // Prepare a select statement
-    $sql = "SELECT * FROM products WHERE product_id = :product_id";
+ // Prepare a select statement
+ $sql = "SELECT * FROM products WHERE id = :id";
     
-    if($stmt = $pdo->prepare($sql)){
-        // Bind variables to the prepared statement as parameters
-        $stmt->bindParam(":product_id", $param_product_id);
-        
-        // Set parameters
-        $param_product_id = trim($_GET["product_id"]);
-        
-        // Attempt to execute the prepared statement
-        if($stmt->execute()){
-            if($stmt->rowCount() == 1){
-                /* Fetch result row as an associative array. Since the result set
-                contains only one row, we don't need to use while loop */
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ if($stmt = $pdo->prepare($sql)){
+     // Bind variables to the prepared statement as parameters
+     $stmt->bindParam(":id", $param_id);
+     
+     // Set parameters
+     $param_id = trim($_GET["id"]);
+     
+     // Attempt to execute the prepared statement
+     if($stmt->execute()){
+         if($stmt->rowCount() == 1){
+             // Fetch result row as an associative array
+             $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 
-                // Format dates
-                $product_date_added = date("F j, Y", strtotime($row["product_date_added"]));
-                $product_updated_date = date("F j, Y", strtotime($row["product_updated_date"]));
+                // Retrieve individual field values
+                $product_name = $row["name"];
+                $product_details = $row["description"];
+                $product_price = $row["price"];
+                $product_rrp = $row["rrp"];
+                $product_quantity = $row["quantity"];
+                $product_img = $row["img"];
+                $date_added = $row["date_added"];
+                $product_updated_date = $row["updated_date"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: ../public/error.php");
@@ -92,27 +98,37 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                     <h1 class="mt-5 mb-3">View Product Record</h1>
                     <div class="form-group">
                         <label>Product Name</label>
-                        <p><b><?php echo $row["product_name"]; ?></b></p>
+                        <p><b><?php echo htmlspecialchars($product_name); ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Product Details</label>
-                        <p><b><?php echo $row["product_details"]; ?></b></p>
+                        <p><b><?php echo htmlspecialchars($product_details); ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Product Retail Price</label>
-                        <p><b><?php echo $row["product_retail_price"]; ?></b></p>
+                        <label>Price</label>
+                        <p><b><?php echo htmlspecialchars($product_price); ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Product Date Added</label>
-                        <p><b><?php echo $product_date_added; ?></b></p>
+                        <label>RRP</label>
+                        <p><b><?php echo htmlspecialchars($product_rrp); ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Product Updated Date</label>
-                        <p><b><?php echo $product_updated_date; ?></b></p>
+                        <label>Quantity</label>
+                        <p><b><?php echo htmlspecialchars($product_quantity); ?></b></p>
                     </div>
-
-                    <p><a href="../user/dashboard.php" class="btn btn-primary">Back</a></p>
-                
+                    <div class="form-group">
+                        <label>Image</label>
+                        <p><b><?php echo htmlspecialchars($product_img); ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Added</label>
+                        <p><b><?php echo htmlspecialchars($date_added); ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Updated Date</label>
+                        <p><b><?php echo htmlspecialchars($updated_date); ?></b></p>
+                    </div>
+                    <p><a href="../products.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>        
         </div>
