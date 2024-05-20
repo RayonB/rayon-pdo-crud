@@ -108,8 +108,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         // Define the row template
                         $rowTemplate = '
                             <tr>
+
                                 <td>{{id}}</td>
-                                <td>{{name}}</td>
+                                <td>{{title}}</td>
                                 <td>{{description}}</td>
                                 <td>{{price}}</td>
                                 <td>{{rrp}}</td>
@@ -129,7 +130,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         $rows = '';
                         while ($row = $result->fetch()) {
                             $rowHtml = str_replace(
-                                array('{{id}}', '{{name}}', '{{description}}', '{{price}}', '{{rrp}}', '{{quantity}}', '{{img}}', '{{date_added}}', '{{update_date}}'),
+                                array('{{id}}', '{{name}}', '{{description}}', '{{price}}', '{{rrp}}', '{{quantity}}', '{{img}}', '{{date_added}}', '{{updated_date}}'),
                                 array($row['id'], $row['name'], $row['description'], $row['price'], $row['rrp'], $row['quantity'], $row['img'], $row['date_added'], $row['updated_date']),
                                 $rowTemplate
                             );
