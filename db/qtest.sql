@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `products`
 --
 
-  CREATE TABLE `products` (
+CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `description` varchar(200) NOT NULL,
@@ -37,7 +37,7 @@ SET time_zone = "+00:00";
   `img` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utfA8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `users`

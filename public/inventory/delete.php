@@ -2,7 +2,7 @@
 // Process delete operation after confirmation
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Include config file
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
+    require_once '../../db/config.php';
     
     // Prepare a delete statement
     $sql = "DELETE FROM products WHERE id = :id";
@@ -45,6 +45,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <meta charset="UTF-8">
     <title>Delete Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <style>
         body {
             background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
