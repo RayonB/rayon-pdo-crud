@@ -1,15 +1,16 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ./public/user/dashboard.php");
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: ./public/dashboard.php");
     exit;
 }
- 
+
 // Include config file
-require_once "./db/config.php";
+require_once 'db/config.php';
+
  
 // Define variables and initialize with empty values
 $username = $password = "";
