@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
+require_once '../../db/config.php';
  
 // Define variables and initialize with empty values
 $name = $description = $price = $rrp = $quantity = $img =  $date_added = $updated_date ="";
