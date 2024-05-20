@@ -5,26 +5,34 @@
     <title>Error</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
+         body {
+            font: 14px sans-serif;
+            text-align: center;
             background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Adjust to full viewport height */
+            height: 120vh; /* Adjust to full viewport height */
             margin: 0;
-            padding-top: 40px; /* Adjust to center content */
-            color: #fff; /* Text color */
+            padding-top: 0px; /* Adjust to center content */
         }
         .wrapper{
-            width: 600px;
+            width: 1300px; /* Increased width */
             margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.6); /* Background color with opacity */
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9);
         }
-        .alert {
-            background-color: rgba(255, 255, 255, 0.2); /* Alert background color with opacity */
-            color: #fff; /* Text color */
-            border-color: #dc3545; /* Alert border color */
+        h1 {
+            font: 50px sans-serif;
+            color: #16016b ;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding-top: 0px;
+            padding: 5px;
+            border-radius: 10px;
         }
-        .alert a {
-            color: #fff; /* Link color */
+        table tr td:last-child{
+            width: 150px;
         }
     </style>
 </head>
