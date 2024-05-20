@@ -1,8 +1,7 @@
 <?php
 // Include config file
-require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
+require_once '../../db/config.php';
 
- 
 // Define variables and initialize with empty values
 $name = $description = $price = $rrp = $quantity = $img =  $date_added = $updated_date ="";
 $name_err = $description_err = $price_err = $rrp_err = $quantity_err = $img_err = $date_added_err = $updated_date_err ="";
@@ -192,10 +191,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <span class="invalid-feedback"><?php echo $name_err; ?></span>
                     </div>
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="description" class="form-control <?php echo (!empty($description_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $description; ?></textarea>
-                        <span class="invalid-feedback"><?php echo $description_err; ?></span>
-                    </div>
+                    <label>Description</label>
+                            <textarea name="description" class="form-control <?php echo (!empty($description_err)) ? 'is-invalid' : ''; ?>"><?php echo $description; ?></textarea>
+                            <span class="invalid-feedback"><?php echo $description_err;?></span>
+                        </div>
                     <div class="form-group">
                         <label>Price</label>
                         <input type="text" name="price" class="form-control <?php echo (!empty($price_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $price; ?>">
