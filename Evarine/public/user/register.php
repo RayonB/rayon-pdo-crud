@@ -92,7 +92,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
- 
 
 <!DOCTYPE html>
 <html lang="en">

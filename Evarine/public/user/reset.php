@@ -80,54 +80,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <style>
         body {
             font: 14px sans-serif;
-            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your actual image file */
+            background-image: url('background_image.jpg'); /* Add your background image URL here */
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 100vh; /* Ensure full height */
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .wrapper {
             width: 360px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
         }
-
-        h2 {
-            margin-bottom: 20px;
+        .wrapper h2 {
             text-align: center;
         }
-
-        label {
-            font-weight: bold;
+        .form-group {
+            margin-bottom: 20px;
         }
-
         .form-control {
-            border-radius: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 10px;
         }
-
         .btn-primary {
             width: 100%;
-            border-radius: 5px;
+            padding: 10px;
         }
-
         .btn-link {
-            border-radius: 5px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .btn-link:hover {
-            color: #0056b3;
-        }
-
-        .invalid-feedback {
             display: block;
+            text-align: center;
         }
     </style>
 </head>
@@ -148,7 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
+                <a class="btn btn-link" href="welcome.php">Cancel</a>
             </div>
         </form>
     </div>    

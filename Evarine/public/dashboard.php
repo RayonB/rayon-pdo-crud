@@ -67,34 +67,38 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand"  href="dashboard.php">Admin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand"  href="dashboard.php">Admin</a>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="dashboard.php">Dashboard <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="products.php">Products</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <!--<a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>-->
-            <a href="../public/user/logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
-        </form>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="dashboard.php">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="products.php">Products</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     <!--<a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>-->
+        <a href="../public/user/logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+    </form>
+  </div>
 </nav>
+<body>
 
-<div class="container-fluid mt-5">
+<div class="container-fluid" >
     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header">Products Recorded</div>
+        <div class="card-header" href="products.php">Products Recorded</div>
         <div class="card-body">
+            <h5 class="card-title "></h5>
+            
             <?php
             // Include config file
             require_once "../db/config.php";
@@ -120,6 +124,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             // Close statement
             unset($stmt);
             ?>
+            
             <p class="card-text">Date and Time: <?php echo date("Y-m-d H:i:s"); ?></p>
         </div>
     </div>

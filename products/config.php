@@ -1,8 +1,8 @@
-
+<!-- 
 <?php
 
 $host = 'localhost';
-$dbname = 'qtest';
+$dbname = 'it28-ecommerce';
 $username = 'root';
 $password = '';
 /*
@@ -20,4 +20,3 @@ try {
     die("Database connection failed: " . $e->getMessage());
    
 }
- 
