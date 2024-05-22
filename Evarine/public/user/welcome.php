@@ -8,7 +8,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../index.php");
     exit;
 }
-?>
+
+// Include config file
+require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/Rayon-pdo-crud/db/config.php";
 
  <!DOCTYPE html>
 <html lang="en">

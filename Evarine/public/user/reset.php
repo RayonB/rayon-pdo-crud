@@ -7,9 +7,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../index.php");
     exit;
 }
- 
 // Include config file
-require_once "../db/config.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/Rayon-pdo-crud/db/config.php";
+ 
  
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";

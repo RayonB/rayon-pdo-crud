@@ -2,7 +2,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'it28-ecommerce';
+$dbname = 'qtest';
 $username = 'root';
 $password = '';
 /*

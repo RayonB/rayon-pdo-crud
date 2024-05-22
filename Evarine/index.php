@@ -7,9 +7,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ./public/dashboard.php");
     exit;
 }
- 
+
 // Include config file
-require_once $_SERVER['DOCUMENT_ROOT'] . "/it28-ecommerce/it28-admin/db/config.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/Rayon-pdo-crud/Evarine/db/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -85,73 +85,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            font: 14px sans-serif;
-            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your actual image file */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .wrapper {
-            width: 360px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
-        }
-
-        .wrapper h2 {
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-control {
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        a {
-            color: #007bff;
-        }
-
-        a:hover {
-            color: #0056b3;
-        }
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 360px; padding: 20px; }
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" style="margin: 0 auto; text-align: center;">
     <h2>Login</h2>
     <p>Please fill in your credentials to login.</p>
 
@@ -161,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }        
     ?>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="text-align: left;">
         <div class="form-group">
             <label>Username</label>
             <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">

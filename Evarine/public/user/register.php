@@ -1,6 +1,7 @@
 <?php
 // Include config file
-require_once "../db/config.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
+ 
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
