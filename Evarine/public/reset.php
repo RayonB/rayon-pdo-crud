@@ -1,16 +1,15 @@
-
 <?php
 // Initialize the session
 session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: ../../index.php");
+    header("location: ../index.php");
     exit;
 }
  
 // Include config file
-require_once "../../db/config.php";
+require_once "../db/config.php";
  
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";
@@ -56,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: ../../index.php");
+                header("location: ../index.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -72,64 +71,64 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-         body {
-            font-family: Arial, sans-serif;
-            background-image: url('https://source.unsplash.com/1600x900/?nature');
+        body {
+            font: 14px sans-serif;
+            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your actual image file */
             background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-position: center;
             height: 100vh;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .wrapper {
             width: 360px;
-            padding: 40px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
         }
-        .wrapper h2 {
-            margin-bottom: 30px;
-            text-align: center;
-            color: #333;
-        }
-        .form-group {
+
+        h2 {
             margin-bottom: 20px;
-        }
-        .form-control {
-            border-radius: 4px;
-        }
-        .btn-primary, .btn-secondary {
-            width: 100%;
-            border-radius: 4px;
-        }
-        .btn-secondary {
-            margin-top: 10px;
-        }
-        .invalid-feedback {
-            color: #dc3545;
-        }
-        p {
             text-align: center;
-            color: #333;
         }
-        p a {
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .btn-link {
+            border-radius: 5px;
             color: #007bff;
             text-decoration: none;
         }
-        p a:hover {
-            text-decoration: underline;
-        }       
+
+        .btn-link:hover {
+            color: #0056b3;
+        }
+
+        .invalid-feedback {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -149,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="./dashboard.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
             </div>
         </form>
     </div>    

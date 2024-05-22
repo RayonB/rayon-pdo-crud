@@ -4,6 +4,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Include config file
     require_once '../../db/config.php';
     
+    
     // Prepare a delete statement
     $sql = "DELETE FROM products WHERE id = :id";
     
@@ -45,47 +46,52 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <meta charset="UTF-8">
     <title>Delete Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
     <style>
         body {
-            background-image: url('https://source.unsplash.com/random/1920x1080'); /* Background image URL */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?nature');
             background-size: cover;
             background-position: center;
-            height: 115vh; /* Adjust to full viewport height */
-            margin: 0;
-            padding-top: 0px; /* Adjust to center content */
-            color: #fff; /* Text color */
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .wrapper{
-            width: 850px;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.8); /* Background color with opacity */
-            border-radius: 5px;
-            padding: 1px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+
+        .wrapper {
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
-        .form-group label {
-            color: #fff; /* Label text color */
+
+        .alert p {
+            margin-bottom: 0;
         }
-        .form-control {
-            background-color: rgba(255, 255, 255, 0.2); /* Input background color with opacity */
-            color: #fff; /* Input text color */
+
+        .btn {
+            width: 100px;
         }
-        .btn-primary {
-            background-color: #007bff; /* Primary button background color */
-            border-color: #007bff; /* Primary button border color */
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
         }
-        .btn-primary:hover {
-            background-color: #0056b3; /* Primary button background color on hover */
-            border-color: #0056b3; /* Primary button border color on hover */
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
         }
+
         .btn-secondary {
-            background-color: #6c757d; /* Secondary button background color */
-            border-color: #6c757d; /* Secondary button border color */
+            background-color: #6c757d;
+            border-color: #6c757d;
         }
+
         .btn-secondary:hover {
-            background-color: #5a6268; /* Secondary button background color on hover */
-            border-color: #5a6268; /* Secondary button border color on hover */
+            background-color: #5a6268;
+            border-color: #545b62;
         }
     </style>
 </head>
