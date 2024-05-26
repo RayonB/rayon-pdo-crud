@@ -96,7 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <style>
            body {
     font-family: Arial, sans-serif;
-    background-image: url('./media/luffy-ace-sabo.webp');
+    background-image: url('./media/4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     background-color: #fff; /* White background */
     border-radius: 20px;
     box-shadow: 0px 0px 30px rgba(255, 69, 0, 0.7), 0 0 0 4px black; /* Orange shadow and black border */
-    background-image: url('./media/luffy.jpg'); /* Background image */
+    background-image: url('./media/2.jpg'); /* Background image */
     background-size: cover;
     background-position: center;
 }

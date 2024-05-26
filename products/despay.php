@@ -26,7 +26,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: linear-gradient(to bottom, white 675px, gray 10px);
+    background-image: linear-gradient(to bottom, #994d00 675px, #663300 10px);
     color: #000000;
     padding: 20px;
 }
@@ -231,7 +231,7 @@
 
 nav {
     flex: 6;
-    background-color: black;
+    background-color: #663300;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -384,11 +384,11 @@ h1 {
             </nav>
             <hr>
             <div class="slideshow-container">
-        <img class="slides fade" src="../media/luffy-ace-sabo.webp" alt="Image 1">
-        <img class="slides fade" src="../media/luffy.jpg" alt="Image 2">
-        <img class="slides fade" src="../media/nami-roben.webp" alt="Image 3">
-        <img class="slides fade" src="../media/pirate.jpg" alt="Image 4">
-        <img class="slides fade" src="../media/roben.jpg" alt="Image 5">
+        <img class="slides fade" src="../media/1.avif" alt="Image 1">
+        <img class="slides fade" src="../media/2.jpg" alt="Image 2">
+        <img class="slides fade" src="../media/3.jpg" alt="Image 3">
+        <img class="slides fade" src="../media/4.jpg" alt="Image 4">
+        <img class="slides fade" src="../media/5.png" alt="Image 5">
         <div class="navigation">
             <button onclick="prevSlide()">Prev</button>
             <button onclick="nextSlide()">Next</button>
