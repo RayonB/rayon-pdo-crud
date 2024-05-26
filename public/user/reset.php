@@ -4,13 +4,12 @@ session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: ../index.php");
+    header("location: ../../index.php");
     exit;
 }
-
-// Include config file
-require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/Rayon-pdo-crud/db/config.php";
  
+// Include config file
+require_once "../../db/config.php";
  
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";
@@ -56,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: ../index.php");
+                header("location: ../../index.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -72,50 +71,95 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
  
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            font: 14px sans-serif;
-            background-image: url('background_image.jpg'); /* Add your background image URL here */
-            background-size: cover;
-            background-position: center;
-            height: 100vh; /* Ensure full height */
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .wrapper {
-            width: 360px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-        }
+           body {
+    font-family: Arial, sans-serif;
+    background-image: url('../../media/nami&roben.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    width: 360px;
+    padding: 30px;
+    background-color: #fff; /* White background */
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(255, 69, 0, 0.7), 0 0 0 4px black; /* Orange shadow and black border */
+    background-image: url('../../media/roben.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+}
+
+
         .wrapper h2 {
             text-align: center;
+            margin-bottom: 20px;
+            color: white; /* Hard black text */
+            font-weight: bold; /* Bold font */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow */
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
+        label {
+            color: white; /* Hard black text */
+            font-weight: bold; /* Bold font */
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+
         .form-control {
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            padding: 10px;
+            border-color: orange; /* Light gray border */
+            font-weight: bold; /* Bold font */
         }
+
+        .form-control:focus {
+            border-color: orange; /* Blue border when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Focus effect */
+        }
+
         .btn-primary {
-            width: 100%;
-            padding: 10px;
+            background-color: orange; /* Blue button */
+            border-color: black;
+            font-weight: bold; /* Bold font */
         }
-        .btn-link {
-            display: block;
-            text-align: center;
+
+        .btn-primary:hover {
+            background-color: orange; /* Darker blue on hover */
+            border-color: #0056b3;
         }
+
+        .alert {
+            margin-top: 20px;
+        }
+        p {
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+
+        a {
+             font-weight: bold;
+             color: orange;
+             text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        } 
+        
+
     </style>
 </head>
 <body>
@@ -135,7 +179,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link" href="welcome.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="../../products/despay.php">Cancel</a>
             </div>
         </form>
     </div>    

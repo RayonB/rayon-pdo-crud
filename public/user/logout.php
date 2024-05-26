@@ -1,4 +1,3 @@
-
 <?php
 // Initialize the session
 session_start();
@@ -10,6 +9,6 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to login page
-header("Location: /qtest/Rayon-pdo-crud/index.php");
+header("location: ../../index.php");
 exit;
 ?>

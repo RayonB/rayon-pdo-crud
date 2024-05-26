@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ./public/dashboard.php");
+    header("location: ./products/despay.php");
     exit;
 }
  
@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             // Redirect user to welcome page
                            // header("location: ./products/board.php");
-                           header("location: ./products/dashboard.php");
+                           header("location: ./products/despay.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -96,7 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <style>
            body {
     font-family: Arial, sans-serif;
-    background-image: url('./media/1.jpeg');
+    background-image: url('./media/luffy-ace-sabo.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     background-color: #fff; /* White background */
     border-radius: 20px;
     box-shadow: 0px 0px 30px rgba(255, 69, 0, 0.7), 0 0 0 4px black; /* Orange shadow and black border */
-    background-image: url('./media/2.webp'); /* Background image */
+    background-image: url('./media/luffy.jpg'); /* Background image */
     background-size: cover;
     background-position: center;
 }
@@ -139,7 +139,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         .form-control {
-            border-color: red; /* Light gray border */
+            border-color: orange; /* Light gray border */
             font-weight: bold; /* Bold font */
         }
 
@@ -149,13 +149,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         .btn-primary {
-            background-color: red; /* Blue button */
-            border-color: gray;
+            background-color: orange; /* Blue button */
+            border-color: black;
             font-weight: bold; /* Bold font */
         }
 
         .btn-primary:hover {
-            background-color: red; /* Darker blue on hover */
+            background-color: orange; /* Darker blue on hover */
             border-color: #0056b3;
         }
 
@@ -171,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         a {
              font-weight: bold;
-             color: red;
+             color: orange;
              text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
         } 
         
