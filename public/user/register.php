@@ -1,7 +1,6 @@
 <?php
 // Include config file
-require_once $_SERVER['DOCUMENT_ROOT'] . "/qtest/db/config.php";
- 
+require_once "../../db/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -79,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: ../index.php");
+                header("location: ../../index.php");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -93,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,64 +100,89 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            font: 14px sans-serif;
-            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your actual image file */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+         body {
+    font-family: Arial, sans-serif;
+    background-image: url('../../media/1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        .wrapper {
-            width: 360px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
-        }
+.wrapper {
+    width: 360px;
+    padding: 30px;
+    background-color: #fff; /* White background */
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(255, 69, 0, 0.7), 0 0 0 4px black; /* Orange shadow and black border */
+    background-image: url('../../media/2.webp'); /* Background image */
+    background-size: cover;
+    background-position: center;
+}
 
-        h2 {
-            margin-bottom: 20px;
+
+        .wrapper h2 {
             text-align: center;
+            margin-bottom: 20px;
+            color: white; /* Hard black text */
+            font-weight: bold; /* Bold font */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow */
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
         }
 
         label {
-            font-weight: bold;
+            color: white; /* Hard black text */
+            font-weight: bold; /* Bold font */
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
         }
 
         .form-control {
-            border-radius: 5px;
+            border-color: red; /* Light gray border */
+            font-weight: bold; /* Bold font */
+        }
+
+        .form-control:focus {
+            border-color: orange; /* Blue border when focused */
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Focus effect */
         }
 
         .btn-primary {
-            width: 100%;
-            border-radius: 5px;
+            background-color: red; /* Blue button */
+            border-color: gray;
+            font-weight: bold; /* Bold font */
         }
 
-        .btn-secondary {
-            width: 100%;
-            border-radius: 5px;
+        .btn-primary:hover {
+            background-color: red; /* Darker blue on hover */
+            border-color: #0056b3;
         }
 
+        .alert {
+            margin-top: 20px;
+        }
         p {
-            text-align: center;
-        }
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
 
         a {
-            color: #007bff;
-        }
+             font-weight: bold;
+             color: red;
+             text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        } 
+        
 
-        a:hover {
-            color: #0056b3;
-        }
 
-        .invalid-feedback {
-            display: block;
-        }
     </style>
 </head>
 <body>
@@ -185,7 +209,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
-            <p>Already have an account? <a href="../index.php">Login here</a>.</p>
+            <p>Already have an account? <a href="../../index.php">Login here</a>.</p>
         </form>
     </div>    
 </body>
