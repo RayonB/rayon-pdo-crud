@@ -27,7 +27,32 @@ $conn->close();
     <meta charset="UTF-8">
     <title>Products</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Add any additional styling here -->
+    <style>
+        body {
+            background-image: url('https://www.publicdomainpictures.net/pictures/270000/velka/coffee-beans-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .card {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .card-title, .card-text {
+            color: #000;
+        }
+        h1 {
+            color: #ffdd57;
+        }
+    </style>
 </head>
 <body>
     <div class="container">

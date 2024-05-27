@@ -206,10 +206,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="close" onclick="closePurchaseModal()">&times;</span>
                 <div class="purchase-info">
 
-
-
-
-
                 
                     <h2>Enter Your Details</h2>
                     <label for="name">Name:</label>

@@ -5,9 +5,31 @@
     <title>Error</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .wrapper{
+        body {
+            background-image: url('https://www.publicdomainpictures.net/pictures/270000/velka/coffee-beans-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .wrapper {
             width: 600px;
-            margin: 0 auto;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #ffdd57;
+        }
+        .alert {
+            background-color: rgba(255, 0, 0, 0.8);
+            border: none;
+        }
+        .alert-link {
+            color: #ffdd57;
+            text-decoration: underline;
         }
     </style>
 </head>

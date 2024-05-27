@@ -1,49 +1,49 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ./public/user/dashboard.php");
     exit;
 }
- 
+
 // Include config file
 require_once "./db/config.php";
- 
+
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter username.";
     } else{
         $username = trim($_POST["username"]);
     }
-    
+
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";
     } else{
         $password = trim($_POST["password"]);
     }
-    
+
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = :username";
-        
+
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
-            
+
             // Set parameters
             $param_username = trim($_POST["username"]);
-            
+
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Check if username exists, if yes then verify password
@@ -55,12 +55,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
-                            
+
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
+                            $_SESSION["username"] = $username;
+
                             // Redirect user to welcome page
                             header("location: ./public/user/dashboard.php");
                         } else{
@@ -80,12 +80,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             unset($stmt);
         }
     }
-    
+
     // Close connection
     unset($pdo);
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,8 +93,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        body {
+            background-image: url('https://www.publicdomainpictures.net/pictures/270000/velka/coffee-beans-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+        .wrapper {
+            width: 360px;
+            padding: 20px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .form-group label {
+            color: #ffdd57;
+        }
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+        }
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .btn-primary {
+            background-color: #6f4e37;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #563826;
+        }
+        .invalid-feedback {
+            color: #ffdd57;
+        }
+        .alert-danger {
+            background-color: rgba(255, 0, 0, 0.8);
+            border: none;
+        }
+        .alert-link {
+            color: #ffdd57;
+            text-decoration: underline;
+        }
+        h2, p {
+            color: #ffdd57;
+        }
+        a {
+            color: #ffdd57;
+        }
     </style>
 </head>
 <body>
