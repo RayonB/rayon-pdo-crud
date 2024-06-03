@@ -110,7 +110,7 @@
             <span class="error" id="country_error"></span> <!-- Error message for country -->
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="../products/despay.php" class="btn btn-danger mr-3" style="border-color: black;">Cancel</a>
+        <a href="../products/desplay.php" class="btn btn-danger mr-3" style="border-color: black;">Cancel</a>
     </form>
 </div>
 
@@ -162,6 +162,7 @@
 
         return isValid;
     }
+    
 </script>
 </body>
 </html>

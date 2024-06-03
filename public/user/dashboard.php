@@ -160,13 +160,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="close" onclick="closeClarificationModal()">&times;</span>
                 <div class="clarification-info">
                     <h2>Details</h2>
-                    <p><strong>Product:</strong> <span id="clarification-title"></span></p>
-                    <p><strong>Description:</strong> <span id="clarification-description"></span></p>
-                    <p><strong>Price:</strong> <span id="clarification-price"></span></p>
+                    <p><strong>Product:</strong> <span product_id="clarification-title"></span></p>
+                    <p><strong>Description:</strong> <span product_id="clarification-description"></span></p>
+                    <p><strong>Price:</strong> <span product_id="clarification-price"></span></p>
                     <h2>Purchase Details</h2>
-                    <p><strong>Name:</strong> <span id="clarification-name"></span></p>
-                    <p><strong>Address:</strong> <span id="clarification-address"></span></p>
-                    <p><strong>Contact Number:</strong> <span id="clarification-contact"></span></p>
+                    <p><strong>Name:</strong> <span product_id="clarification-name"></span></p>
+                    <p><strong>Address:</strong> <span product_id="clarification-address"></span></p>
+                    <p><strong>Contact Number:</strong> <span product_id="clarification-contact"></span></p>
                     <button class="btn btn-edit" onclick="editData()">Edit</button>
 
                     <button class="btn btn-confirm" onclick="confirmPurchaseData()">Confirm</button>
@@ -182,17 +182,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div class="edit-info">
                     <h2>Edit Details</h2>
                     <label for="edit-title">Product:</label>
-                    <input type="text" id="edit-title">
+                    <input type="text" product_id="edit-title">
                     <label for="edit-description">Description:</label>
-                    <textarea id="edit-description"></textarea>
+                    <textarea product_id="edit-description"></textarea>
                     <label for="edit-price">Price:</label>
-                    <input type="text" id="edit-price">
+                    <input type="text" product_id="edit-price">
                     <label for="edit-name">Name:</label>
-                    <input type="text" id="edit-name">
+                    <input type="text" product_id="edit-name">
                     <label for="edit-address">Address:</label>
-                    <input type="text" id="edit-address">
+                    <input type="text" product_id="edit-address">
                     <label for="edit-contact">Contact Number:</label>
-                    <input type="text" id="edit-contact">
+                    <input type="text" product_id="edit-contact">
                     <hr>
                     <button class="btn btn-confirm" onclick="confirmEdit()">Confirm Edit</button>
                     <button class="btn btn-cancel" onclick="closeEditModal()">Cancel</button>
@@ -210,11 +210,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <h2>Enter Your Details</h2>
                     <label for="name">Name:</label>
                    
-                    <input type="text" id="name">
+                    <input type="text" product_id="name">
                     <label for="address">Address:</label>
-                    <input type="text" id="address">
+                    <input type="text" product_id="address">
                     <label for="contact">Contact Number:</label>
-                    <input type="text" id="contact">
+                    <input type="text" product_id="contact">
                     <hr>
                     <button class="btn btn-confirm" onclick="openClarificationModal()">Confirm Purchase</button>
                     <button class="btn btn-cancel" onclick="closePurchaseModal()">Cancel</button>

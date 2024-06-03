@@ -1,10 +1,10 @@
 <?php
 // Database connection
-
+/*
 $host = 'localhost';
-$dbname = 'u593341949_db_rayon';
-$username = 'u593341949_dev_rayon';
-$password = '20221086Rayon';
+$dbname = '';
+$username = '';
+$password = ''; */
 
 
 try {
@@ -18,12 +18,9 @@ try {
     $firt_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $phone_number = $_POST['phone_number'];
-    $age = $_POST['age'];
-   
-    
 
     // Prepare SQL statement to insert into database
-    $sql = "INSERT INTO user_info (user_id, first_name, last_name, phone_number, age) VALUES (:user_id, :first_name, :last_name, :phone_number, :age)";
+    $sql = "INSERT INTO user_info (user_id, first_name, last_name, phone_number, age) VALUES (:user_id, :first_name, :last_name, :phone_number)";
     $stmt = $conn->prepare($sql);
 
     // Bind parameters
@@ -31,7 +28,6 @@ try {
     $stmt->bindParam(':first_name', $firt_name);
     $stmt->bindParam(':last_name', $last_name);
     $stmt->bindParam(':phone_number', $phone_number);
-    $stmt->bindParam(':age', $age);
 
     // Execute the statement
     $stmt->execute();
