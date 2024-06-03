@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to bottom, #0f0f0f 590px, #000000 50px);
+    color: #000000;
+    padding: 20px;
+}
